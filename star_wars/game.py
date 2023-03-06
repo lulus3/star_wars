@@ -47,7 +47,7 @@ class Game:
 
     def intro(self):
         if Config.loop_intro:
-            self.__video_intro = Video("videos/video intro 1080.mp4")
+            self.__video_intro = Video("videos/video intro.mp4")
             self.__video_intro.set_size((1366, 768))
         while Config.loop_intro:
             self.__video_intro.draw(Config.screen, (0, 0))
