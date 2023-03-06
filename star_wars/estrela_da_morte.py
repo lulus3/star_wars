@@ -7,7 +7,7 @@ class Ds1:
     def __init__(self):
         self.__img = pygame.image.load("assets/estrela1.png")
         self.__rect = self.__img.get_rect()
-        self.__vector_init = pygame.Vector2(0, -0.1)
+        self.__vector_init = pygame.Vector2(0, -8)
         self.__xcor = Config.screen_w * 0.65
         self.__ycor = Config.screen_h * 0.32
         self.__vector = self.__vector_init.rotate(240)

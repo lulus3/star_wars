@@ -14,7 +14,7 @@ class Config:
     red = (255, 0, 0)
 
     # naves
-    speed_nave = 4
+    speed_nave = 5
     recharge_time = 0.4
     immunity_time = 3
     time_in_limbo = 5
@@ -45,9 +45,10 @@ class Config:
     screen_w = 1366
     screen_h = 768
     screen_size = (screen_w, screen_h)
-    screen = pygame.display.set_mode(screen_size, pygame.FULLSCREEN | pygame.SCALED)
+    # , pygame.FULLSCREEN | pygame.SCALED
+    screen = pygame.display.set_mode(screen_size)
 
-    image_screen = pygame.image.load("assets/universo0.png")
+    image_screen = pygame.image.load("assets/universo4.png")
     image_surface = pygame.Surface((image_screen.get_width(), image_screen.get_height()))
     image_rect = image_screen.get_rect()
     screen_rect = pygame.draw.rect(screen, white, (0, 0, 1366, 768))
@@ -84,8 +85,8 @@ class Config:
     list_m = [1, 1, 1, 1]
     list_axis = [[0, -2], [0, -2], [0, -2], [0, -2]]
 
-    victory_point = 1
-    loop_intro = True
+    victory_point = 10
+    loop_intro = False
     loop_menu = True
     loop = True
     loop_victory = False

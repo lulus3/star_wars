@@ -106,16 +106,17 @@ def hatdown(event, list_of_tank):
 
 
 def buttondown(event, list_of_tank):
+    print(event)
     n = 7
     for tank in list_of_tank:
         if len(list_of_tank) == 2 and tank.get_id() == 2:
             n = 1
         if tank.get_id() == event.joy or n == event.joy:
-            if event.button == 0:
+            if event.button == 0 or event.button == 1 or event.button == 2 or event.button == 3:
                 tank.set_shoot(True)
-            if event.button == 1:
+            if event.button == 5:
                 tank.set_movement(1)
-            if event.button == 2:
+            if event.button == 4:
                 tank.set_movement(2)
 
 
@@ -125,7 +126,7 @@ def buttonup(event, list_of_tank):
         if len(list_of_tank) == 2 and tank.get_id() == 2:
             n = 1
         if tank.get_id() == event.joy or n == 1:
-            if event.button == 1:
+            if event.button == 5:
                 tank.set_movement(0)
 
 
@@ -148,6 +149,6 @@ def move_axis(list_of_naves):
     for nave in list_of_naves:
         horizontal = Config.list_axis[nave.get_id()][0]
         vertical = Config.list_axis[nave.get_id()][1]
-        if abs(horizontal) < 1 and (abs(vertical) < 1 or abs(vertical) > 10.1):
+        if abs(horizontal) < 0.5 and (abs(vertical) < 0.5 or abs(vertical) > 10.1):
             continue
         nave.spin_by_axis(Config.list_axis[nave.get_id()])

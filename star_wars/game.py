@@ -194,6 +194,7 @@ class Game:
                                 nave.set_time_to_spawn()
                                 self.__list_of_limbo.append(nave)
                                 self.__list_of_nave.remove(nave)
+                                Config.ship_explosion.play()
                                 if bullet.get_id() > 1.5 > nave.get_id():
                                     self.__empire_point += 1
                                 elif bullet.get_id() < 1.5 < nave.get_id():
@@ -317,7 +318,7 @@ class Game:
                     nave.set_bullet_power(power.get_existence_power())
 
     def __limit_power(self):
-        n1, n2, n3, n4 = 0, 0, 0, 0
+        n1, n2, n3, n4, n5, n6, n7, n8 = 0, 0, 0, 0, 0, 0, 0, 0
         for power in self.__list_of_powers:
             if power.get_id() == 0:
                 if n1 != 0:
@@ -462,6 +463,7 @@ class Game:
                         nave.set_time_to_spawn()
                         self.__list_of_limbo.append(nave)
                         self.__list_of_nave.remove(nave)
+                        Config.ship_explosion.play()
                         break
             for b in self.__bullet_list:
                 for bullet in b:
@@ -528,5 +530,3 @@ class Game:
                     if event.key == pygame.K_ESCAPE:
                         video_final.close()
                         sys.exit()
-
-
